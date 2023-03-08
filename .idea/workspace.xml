@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="427de137-380a-46f8-a591-d7678fa6fd24" name="Changes" comment="">
+    <list default="true" id="427de137-380a-46f8-a591-d7678fa6fd24" name="Changes" comment="Config .gitignore">
       <change afterPath="$PROJECT_DIR$/src/main/java/homework_20/Calculator.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/hometask_20/CalculatorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/hometask_20/CalculatorTest_2.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/resources/testng.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
@@ -65,8 +66,11 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Personal_info\Cursor_TA_course\automation_repo\automation_repo\src\test\resources" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="hometask_20" />
+    </key>
   </component>
-  <component name="RunManager" selected="TestNG.D:/Personal_info/Cursor_TA_course/automation_repo/automation_repo/src/test/resources/testng.xml">
+  <component name="RunManager" selected="TestNG.TestNG">
     <configuration name="CalculatorTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="automation_repo" />
       <extension name="coverage">
@@ -84,10 +88,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="D:/Personal_info/Cursor_TA_course/automation_repo/automation_repo/src/test/resources/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="TestNG" type="TestNG" temporary="true">
       <module name="automation_repo" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/testng.xml" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="SUITE" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="PROPERTIES_FILE" value="" />
       <properties />
       <listeners />
       <method v="2">
@@ -147,9 +160,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="TestNG.CalculatorTest" />
+      <item itemvalue="TestNG.TestNG" />
+      <item itemvalue="TestNG.WikiTest" />
+      <item itemvalue="TestNG.WikiTest.test2" />
+      <item itemvalue="TestNG.WikiTest.test_2" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.D:/Personal_info/Cursor_TA_course/automation_repo/automation_repo/src/test/resources/testng.xml" />
+        <item itemvalue="TestNG.TestNG" />
         <item itemvalue="TestNG.CalculatorTest" />
         <item itemvalue="TestNG.WikiTest" />
         <item itemvalue="TestNG.WikiTest.test_2" />
@@ -194,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678281172892</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Config .gitignore">
+      <created>1678281621358</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1678281621358</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
