@@ -2,6 +2,7 @@ package BO;
 
 import POM.CartPage;
 import Services.Constants;
+import Services.ParseText;
 import org.testng.Assert;
 
 public class CartBO {
@@ -19,7 +20,7 @@ public class CartBO {
     }
 
     public CartBO verifyPriceOfProductLessThanMaxPrice(int maxPrice) {
-        Assert.assertTrue( cartPage.getPriceOfProduct() < maxPrice, "Price of product is not less than max price of laptop (400000 ₴)");
+        Assert.assertTrue(ParseText.clearPrice(cartPage.getPriceOfProduct()) < maxPrice, "Price of product is not less than max price of laptop (400000 ₴)");
         return this;
     }
 }

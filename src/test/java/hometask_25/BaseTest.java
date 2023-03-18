@@ -3,6 +3,7 @@ package hometask_25;
 import BO.CartBO;
 import BO.CatalogGridBO;
 import BO.FilterBO;
+import BO.HeaderBO;
 import POM.*;
 import Services.DriverManager;
 import Services.PropertyManager;
@@ -23,10 +24,7 @@ public abstract class BaseTest {
 
     protected WebDriver driver;
     protected HeaderPage headerPage;
-    protected FiltersPage filtersPage;
-    protected CatalogGridPage catalogGridPage;
-    protected CartPage cartPage;
-
+    protected HeaderBO headerBO;
     protected CatalogGridBO catalogGridBO;
     protected FilterBO filterBO;
     protected CartBO cartBO;
@@ -37,9 +35,7 @@ public abstract class BaseTest {
     public void setUp() {
         driver = DriverManager.getDriver();
         headerPage = new HeaderPage();
-        filtersPage = new FiltersPage();
-        catalogGridPage = new CatalogGridPage();
-        cartPage = new CartPage();
+        headerBO = new HeaderBO();
         catalogGridBO = new CatalogGridBO();
         filterBO = new FilterBO();
         cartBO = new CartBO();

@@ -1,16 +1,16 @@
 package BO;
 
 import POM.FiltersPage;
+import Services.Waits;
 
 public class FilterBO extends BaseBO {
 
     private final FiltersPage filtersPage = new FiltersPage();
 
-    public FilterBO searchAndSelectBrand(String brand) {
-        LOGGER.info("Search brand 'HP' and select it");
-        filtersPage
-//                .fillInputSearchBrand(brand)
-                .selectHP();
+    public FilterBO selectBrand(String brand) {
+        LOGGER.info("Select brand " + brand);
+        filtersPage.selectSpecificBrand(brand);
+        Waits.waitForProgressBarDisappear();
         return this;
     }
 }

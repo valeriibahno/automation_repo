@@ -11,6 +11,7 @@ public class Input extends AbstractElement {
 
     public void fillInput(WebElement webElementForWait, String searchText) {
         if(webElement.isDisplayed() && webElement.isEnabled()) {
+            webElement.click();
             webElement.sendKeys(searchText);
         }
         Waits.waitForVisibleWebElement(webElementForWait);

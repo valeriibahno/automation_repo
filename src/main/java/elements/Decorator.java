@@ -20,12 +20,6 @@ public class Decorator extends DefaultFieldDecorator {
                 return null;
             }
             return new Button(proxyForLocator(loader, locator));
-        } else if(field.getType().equals(Checkbox.class)) {
-            ElementLocator locator = factory.createLocator(field);
-            if(loader == null) {
-                return null;
-            }
-            return new Checkbox(proxyForLocator(loader, locator));
         } else if(field.getType().equals(Input.class)) {
             ElementLocator locator = factory.createLocator(field);
             if(loader == null) {
