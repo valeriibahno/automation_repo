@@ -1,7 +1,7 @@
-package BO;
+package bo;
 
-import POM.FiltersPage;
-import Services.Waits;
+import pom.FiltersPage;
+import services.Waits;
 
 public class FilterBO extends BaseBO {
 

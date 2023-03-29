@@ -1,12 +1,12 @@
 package hometask_25;
 
-import BO.CartBO;
-import BO.CatalogGridBO;
-import BO.FilterBO;
-import BO.HeaderBO;
-import POM.*;
-import Services.DriverManager;
-import Services.PropertyManager;
+import bo.CartBO;
+import bo.CatalogGridBO;
+import bo.FilterBO;
+import bo.HeaderBO;
+import pom.*;
+import services.DriverManager;
+import services.PropertyManager;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.OutputType;

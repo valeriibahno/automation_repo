@@ -1,6 +1,6 @@
 package elements;
 
-import Services.Waits;
+import services.Waits;
 import org.openqa.selenium.WebElement;
 
 public class Input extends AbstractElement {

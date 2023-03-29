@@ -1,7 +1,7 @@
-package BO;
+package bo;
 
-import POM.CatalogGridPage;
-import Services.Constants;
+import pom.CatalogGridPage;
+import services.Constants;
 import org.testng.Assert;
 
 public class CatalogGridBO extends BaseBO {

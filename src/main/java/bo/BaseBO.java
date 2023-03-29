@@ -1,6 +1,6 @@
-package BO;
+package bo;
 
-import POM.HeaderPage;
+import pom.HeaderPage;
 import org.apache.log4j.Logger;
 
 public abstract class BaseBO {

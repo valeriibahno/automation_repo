@@ -1,4 +1,4 @@
-package POM;
+package pom;
 
 import elements.Button;
 import elements.Input;

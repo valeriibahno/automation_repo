@@ -1,6 +1,6 @@
 package hometask_25;
 
-import Services.Constants;
+import services.Constants;
 import org.testng.annotations.Test;
 
 public class RozetkaTest extends BaseTest {

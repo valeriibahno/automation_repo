@@ -1,6 +1,6 @@
-package POM;
+package pom;
 
-import Services.DriverManager;
+import services.DriverManager;
 import elements.Decorator;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;

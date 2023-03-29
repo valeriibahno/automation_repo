@@ -1,4 +1,4 @@
-package BO;
+package bo;
 
 import org.testng.Assert;
 

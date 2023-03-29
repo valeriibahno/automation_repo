@@ -1,8 +1,8 @@
-package BO;
+package bo;
 
-import POM.CartPage;
-import Services.Constants;
-import Services.ParseText;
+import pom.CartPage;
+import services.Constants;
+import services.ParseText;
 import org.testng.Assert;
 
 public class CartBO {

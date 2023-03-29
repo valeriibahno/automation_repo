@@ -1,6 +1,6 @@
-package POM;
+package pom;
 
-import Services.Waits;
+import services.Waits;
 import org.openqa.selenium.By;
 
 public class FiltersPage extends HeaderPage {

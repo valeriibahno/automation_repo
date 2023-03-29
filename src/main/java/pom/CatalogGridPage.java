@@ -1,6 +1,6 @@
-package POM;
+package pom;
 
-import Services.Waits;
+import services.Waits;
 import elements.Title;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
