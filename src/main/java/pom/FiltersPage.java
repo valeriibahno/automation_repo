@@ -1,9 +1,9 @@
 package pom;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import services.Waits;
-import org.openqa.selenium.By;
 
 public class FiltersPage extends HeaderPage {
 
