@@ -1,5 +1,7 @@
-package POM;
+package pom;
 
+import elements.Button;
+import elements.Input;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -9,16 +11,16 @@ public class HeaderPage extends BasePage {
     private WebElement logo;
 
     @FindBy(xpath = "//input[@name='search']")
-    private WebElement searchField;
+    private Input searchField;
 
     @FindBy(xpath = "//button[contains(@class,'submit')]")
-    private WebElement buttonSubmit;
+    private Button buttonSubmit;
 
     @FindBy(xpath = "//rz-icon-badge/span")
     private WebElement countInCart;
 
     @FindBy(xpath = "//rz-cart/button")
-    private WebElement iconCart;
+    private Button iconCart;
 
     public boolean isDisplayedLogo() {
         return logo.isDisplayed();
@@ -32,7 +34,7 @@ public class HeaderPage extends BasePage {
 
     public HeaderPage fillSearchField(String text) {
         LOGGER.info("Fill text for searching");
-        searchField.sendKeys(text);
+        searchField.fillInput(searchField, text);
         return this;
     }
 
@@ -46,13 +48,9 @@ public class HeaderPage extends BasePage {
         return Integer.parseInt(countInCart.getText());
     }
 
-    public HeaderPage clickIconCartWithSelectedProducts() {
-        if(getCountInCart() > 0) {
-            LOGGER.info("Click icon 'Cart'");
-            iconCart.click();
-        } else {
-            LOGGER.warn("Icon 'Cart' with zero value");
-        }
+    public HeaderPage clickIconCart() {
+        LOGGER.info("Click icon 'Cart'");
+        iconCart.click();
         return this;
     }
 }

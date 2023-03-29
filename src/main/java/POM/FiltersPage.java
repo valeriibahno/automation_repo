@@ -1,22 +1,20 @@
-package POM;
+package pom;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+import services.Waits;
 
 public class FiltersPage extends HeaderPage {
 
-    @FindBy(xpath = "//a[@data-id='HP']")
-    private WebElement selectBrand;
-
     @FindBy(xpath = "//rz-filter-stack")
-    private WebElement allFilters;
+    private WebElement filterBrands;
 
-    public FiltersPage selectHP() {
-        LOGGER.info("Select brand 'HP' in the filter");
-        explicitWait.until(ExpectedConditions.visibilityOf(allFilters));
-        selectBrand.click();
-        explicitWait.until(ExpectedConditions.titleContains("Ноутбуки HP"));
+    public FiltersPage selectSpecificBrand(String brand) {
+        LOGGER.info("Select brand '" + brand + "' in the filter");
+        Waits.waitForProgressBarDisappear();
+        driver.findElement(By.xpath(String.format("//a[@data-id='%s']", brand))).click();
+        Waits.waitTitleContains("Ноутбуки " + brand);
         return this;
     }
 }

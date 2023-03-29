@@ -1,23 +1,24 @@
-package POM;
+package pom;
 
+import elements.Title;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+import services.Waits;
 
 public class CartPage extends BasePage {
 
     @FindBy(xpath = "//h3[@class='modal__heading']")
-    private WebElement titleOfCart;
+    private Title titleOfCart;
 
     @FindBy(xpath = "//div[contains(@class,'sum-price')]/span")
     private WebElement priceOfProduct;
 
     @FindBy(xpath = "//a[@class='cart-product__title']")
-    private WebElement titleOfProduct;
+    private Title titleOfProduct;
 
 
     public String getCartHeader() {
-        explicitWait.until(ExpectedConditions.visibilityOf(titleOfCart));
+        Waits.waitForVisibleWebElement(titleOfCart);
         return titleOfCart.getText();
     }
 
@@ -25,7 +26,7 @@ public class CartPage extends BasePage {
         return titleOfProduct.getText();
     }
 
-    public int getPriceOfProduct() {
-        return Integer.parseInt(priceOfProduct.getText().replaceAll("\\s+","").replaceAll("₴",""));
+    public String getPriceOfProduct() {
+        return priceOfProduct.getText();
     }
 }

@@ -1,15 +1,16 @@
-package POM;
+package pom;
 
+import elements.Title;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+import services.Waits;
 
 import java.util.List;
 
 public class CatalogGridPage extends HeaderPage {
 
     @FindBy(xpath = "//h1[contains(@class,'catalog-heading')]")
-    private WebElement catalogHeader;
+    private Title catalogHeader;
 
     @FindBy(xpath = "//rz-sort/select")
     private WebElement filterSort;
@@ -24,22 +25,22 @@ public class CatalogGridPage extends HeaderPage {
     private List<WebElement> listIconCartFoundProducts;
 
     public String getCatalogGridHeader() {
-        return catalogHeader.getText();
+        return catalogHeader.getTitle();
     }
 
-    public CatalogGridPage clickSortedByExpensive() {
+    public CatalogGridPage clickOnSorting() {
         LOGGER.info("Click filter 'Sorting by' and select by 'From expensive to cheap'");
-        explicitWait.until(ExpectedConditions.elementToBeClickable(filterSort));
+        Waits.waitForWebElementToBeClickable(filterSort);
         dropDownSorting.click();
-        explicitWait.until(ExpectedConditions.elementToBeClickable(sortFromExpensiveToCheap));
+        Waits.waitForWebElementToBeClickable(sortFromExpensiveToCheap);
         sortFromExpensiveToCheap.click();
-        explicitWait.until(ExpectedConditions.urlContains("sort=expensive"));
+        Waits.waitForUrlChanged("sort=expensive");
         return this;
     }
 
-    public CatalogGridPage selectIconCartFirstItemInCategory() {
-        LOGGER.info("Click on icon 'Cart' in the first found item in grid");
-        listIconCartFoundProducts.get(0).click();
+    public CatalogGridPage selectIconCartItemByPosition(int position) {
+        LOGGER.info("Click on icon 'Cart' on the found item in grid");
+        listIconCartFoundProducts.get(position - 1).click();
         return this;
     }
 }
