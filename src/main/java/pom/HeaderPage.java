@@ -26,8 +26,14 @@ public class HeaderPage extends BasePage {
         return logo.isDisplayed();
     }
 
+    public HeaderPage clickSearchField() {
+        LOGGER.info("Click into search field");
+        searchField.click();
+        return this;
+    }
+
     public HeaderPage fillSearchField(String text) {
-        LOGGER.info("Click on search field");
+        LOGGER.info("Fill text for searching");
         searchField.fillInput(searchField, text);
         return this;
     }

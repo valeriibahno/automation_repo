@@ -1,8 +1,8 @@
 package hometask_24_rozetka;
 
-import POM.*;
-import Services.DriverManager;
-import Services.PropertyManager;
+import pom.*;
+import services.DriverManager;
+import services.PropertyManager;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.OutputType;

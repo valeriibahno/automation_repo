@@ -11,8 +11,6 @@ public abstract class BaseBO {
     public CatalogGridBO searchItem(String nameItemToSearch) {
         LOGGER.info("Click on search field, fill " + nameItemToSearch + " and click button 'Submit'");
         headerPage
-//                .clickOnSearchField()
-//                .fillSearchField(nameItemToSearch)
                 .fillSearchField(nameItemToSearch)
                 .clickButtonSubmit();
         return new CatalogGridBO();

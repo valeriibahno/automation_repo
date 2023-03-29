@@ -1,9 +1,9 @@
 package pom;
 
-import services.Waits;
 import elements.Title;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import services.Waits;
 
 import java.util.List;
 
@@ -29,14 +29,9 @@ public class CatalogGridPage extends HeaderPage {
     }
 
     public CatalogGridPage clickOnSorting() {
-        LOGGER.info("Click filter 'Sorting by'");
+        LOGGER.info("Click filter 'Sorting by' and select by 'From expensive to cheap'");
         Waits.waitForWebElementToBeClickable(filterSort);
         dropDownSorting.click();
-        return this;
-    }
-
-    public CatalogGridPage selectSortedByExpensive() {
-        LOGGER.info("Select in sorting filter by 'From expensive to cheap'");
         Waits.waitForWebElementToBeClickable(sortFromExpensiveToCheap);
         sortFromExpensiveToCheap.click();
         Waits.waitForUrlChanged("sort=expensive");

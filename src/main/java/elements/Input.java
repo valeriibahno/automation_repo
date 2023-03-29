@@ -16,4 +16,11 @@ public class Input extends AbstractElement {
         }
         Waits.waitForVisibleWebElement(webElementForWait);
     }
+
+    @Override
+    public void click() {
+        if(webElement.isDisplayed() && webElement.isEnabled()) {
+            webElement.click();
+        }
+    }
 }

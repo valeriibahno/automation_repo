@@ -16,9 +16,7 @@ public class CatalogGridBO extends BaseBO {
 
     public CatalogGridBO clickSortedByExpensive() {
         LOGGER.info("Sort from expensive to cheap'");
-        catalogGridPage
-                .clickOnSorting()
-                .selectSortedByExpensive();
+        catalogGridPage.clickOnSorting();
         return this;
     }
 
