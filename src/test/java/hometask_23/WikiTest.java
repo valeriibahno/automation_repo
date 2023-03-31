@@ -8,6 +8,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -45,7 +46,9 @@ public class WikiTest {
     @BeforeMethod
     void setUp() {
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--remote-allow-origins=*");
+        driver = new ChromeDriver(chromeOptions);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
@@ -111,7 +114,7 @@ public class WikiTest {
             try {
                 TakesScreenshot screenshot = (TakesScreenshot) driver;
                 File src = screenshot.getScreenshotAs(OutputType.FILE);
-                FileUtils.copyFile(src, new File("src\\test\\java\\screenShots\\" + result.getName() + ".jpg"));
+                FileUtils.copyFile(src, new File("src\\test\\java\\hometask_23\\screenShots\\" + result.getName() + ".jpg"));
             } catch (Exception e) {
                 LOGGER.warn("Exception while taking screenshot " + e.getMessage());
             }
