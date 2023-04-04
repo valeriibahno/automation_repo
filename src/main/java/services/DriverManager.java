@@ -12,14 +12,14 @@ public class DriverManager {
 
     private DriverManager() {}
 
-    public static WebDriver getDriver() {
+    public synchronized static WebDriver getDriver() {
         if(driver == null) {
             setUpDriver();
         }
         return driver;
     }
 
-    private static void setUpDriver() {
+    private synchronized static void setUpDriver() {
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(chromeOptions);
@@ -27,7 +27,7 @@ public class DriverManager {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }
 
-    public static void quit() {
+    public synchronized static void quit() {
         if(driver != null) {
             driver.quit();
         }

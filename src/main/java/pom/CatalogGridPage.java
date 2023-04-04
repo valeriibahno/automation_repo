@@ -24,8 +24,15 @@ public class CatalogGridPage extends HeaderPage {
     @FindBy(xpath = "//button[contains(@class,'buy-button')]")
     private List<WebElement> listIconCartFoundProducts;
 
+    @FindBy(xpath = "//a[@class='catalog-selection__link']")
+    private List<WebElement> listSelectedBrands;
+
     public String getCatalogGridHeader() {
         return catalogHeader.getTitle();
+    }
+
+    public int getQuantitySelectedBrands() {
+        return listSelectedBrands.size();
     }
 
     public CatalogGridPage clickOnSorting() {

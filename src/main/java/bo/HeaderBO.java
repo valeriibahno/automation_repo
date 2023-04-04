@@ -12,4 +12,19 @@ public class HeaderBO extends BaseBO {
         }
         return this;
     }
+
+    public HeaderBO clickUserIcon() {
+        headerPage.clickUserIcon();
+        return this;
+    }
+
+    public HeaderBO clickUserMenu() {
+        headerPage.clickButtonUserMenu();
+        return this;
+    }
+
+    public HeaderBO clickCategoryVacancies() {
+        headerPage.clickCategoryVacancies();
+        return this;
+    }
 }
