@@ -22,6 +22,15 @@ public class HeaderPage extends BasePage {
     @FindBy(xpath = "//rz-cart/button")
     private Button iconCart;
 
+    @FindBy(xpath = "//rz-user")
+    private Button userIcon;
+
+    @FindBy(xpath = "//rz-mobile-user-menu")
+    private Button buttonUserMenu;
+
+    @FindBy(xpath = "//a[@class='ng-tns-c63-2' and contains((.),'Вакансії')]")
+    private WebElement categoryVacancies;
+
     public boolean isDisplayedLogo() {
         return logo.isDisplayed();
     }
@@ -51,6 +60,30 @@ public class HeaderPage extends BasePage {
     public HeaderPage clickIconCart() {
         LOGGER.info("Click icon 'Cart'");
         iconCart.click();
+        return this;
+    }
+
+    public HeaderPage clickUserIcon() {
+        LOGGER.info("Click on user icon");
+        userIcon.click();
+        return this;
+    }
+
+    public HeaderPage clickButtonUserMenu() {
+        LOGGER.info("Click button Menu");
+        buttonUserMenu.click();
+        return this;
+    }
+
+    public HeaderPage clickCategoryVacancies() {
+        LOGGER.info("Click category vacancies");
+        categoryVacancies.click();
+        return this;
+    }
+
+    public HeaderPage clearSearchField() {
+        LOGGER.info("Clear search field");
+        searchField.clear();
         return this;
     }
 }

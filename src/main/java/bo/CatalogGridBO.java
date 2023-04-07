@@ -1,8 +1,8 @@
 package bo;
 
+import org.testng.Assert;
 import pom.CatalogGridPage;
 import services.Constants;
-import org.testng.Assert;
 
 public class CatalogGridBO extends BaseBO {
 
@@ -24,5 +24,16 @@ public class CatalogGridBO extends BaseBO {
         LOGGER.info("Verify header of catalog after search");
         Assert.assertEquals(catalogGridPage.getCatalogGridHeader(), Constants.CATEGORY_LAPTOPS, "Wrong category is displayed");
         return this;
+    }
+
+    public CatalogGridBO verifySearchHeaderCatalogGrid(String title) {
+        LOGGER.info("Verify search header of catalog after search");
+        Assert.assertEquals(catalogGridPage.getCatalogGridHeader(), String.format("«" + title + "»"), "Wrong category is displayed");
+        return this;
+    }
+
+    public void verifyQuantitySelectedBrands(int count) {
+        LOGGER.info("Verify quantity selected brands: " + count);
+         Assert.assertEquals(catalogGridPage.getQuantitySelectedBrands(), count, "Wrong quantity of selected brands is displayed");
     }
 }

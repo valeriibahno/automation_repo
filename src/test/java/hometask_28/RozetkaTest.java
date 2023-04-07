@@ -1,7 +1,11 @@
 package hometask_28;
 
+import com.github.javafaker.Faker;
 import org.testng.annotations.Test;
 import services.Constants;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class RozetkaTest extends BaseTest {
 
@@ -26,5 +30,82 @@ public class RozetkaTest extends BaseTest {
                 .verifyHeader()
                 .verifyTitleOfProductInCart(nameOfProduct)
                 .verifyPriceOfProductLessThanMaxPrice(Constants.MAX_PRICE_LAPTOP);
+    }
+
+    @Test
+    public void verifySearchingSeveralBrandsLaptop() {
+
+        List<String> listBrands = Arrays.asList("HP", "Acer", "Apple");
+
+        catalogGridBO
+                .searchItem(Constants.CATEGORY_LAPTOPS)
+                .verifyHeaderCatalogGrid();
+        filterBO
+                .selectSeveralBrand(listBrands);
+        catalogGridBO
+                .verifyQuantitySelectedBrands(listBrands.size());
+    }
+
+    @Test
+    public void verifyTitleBrandInSearchingResult() {
+
+        List<String> listBrands = Arrays.asList("Nokia", "Poco", "Realme");
+
+        for (String brand: listBrands) {
+            catalogGridBO
+                    .searchItem(brand)
+                    .verifySearchHeaderCatalogGrid(brand);
+            headerBO
+                    .clearSearchField();
+        }
+    }
+
+    @Test
+    public void verifyLoginWithWrongEmail() {
+
+        String email = "_te#st123";
+        String password = "test1234";
+
+        headerBO
+                .clickUserIcon();
+        logInBO
+                .fillEmailAndPassword(email, password)
+                .verifyErrorMessageInvalidEmail();
+    }
+
+    @Test
+    public void verifyLoginWithCorrectEmailAndWrongPassword() {
+
+        String emailFaker = new Faker().internet().emailAddress();
+        String passwordFaker = new Faker().internet().password();
+
+        headerBO
+                .clickUserIcon();
+        logInBO
+                .fillEmailAndPassword(emailFaker, passwordFaker)
+                .verifyErrorMessageInvalidPassword();
+    }
+
+    @Test
+    public void verifyOpenDeliveryPoints() {
+
+        List<String> listCities = Arrays.asList("Дніпро", "Житомир", "Львів");
+
+        mainBO
+                .clickDeliveryPoints();
+        deliveryPointsBO
+                .selectDeliveryPointsByCityAndVerifyTitles(listCities);
+    }
+
+    @Test
+    public void verifySearchingVacancies() {
+
+        headerBO
+                .clickUserMenu()
+                .clickCategoryVacancies();
+        careersBO
+                .verifyTitleCarrierPage()
+                .clickButtonShowVacancies()
+                .verifyListVacancyExists();
     }
 }
