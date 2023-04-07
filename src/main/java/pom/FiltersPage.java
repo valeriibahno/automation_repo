@@ -14,7 +14,7 @@ public class FiltersPage extends HeaderPage {
         LOGGER.info("Select brand '" + brand + "' in the filter");
         Waits.waitForProgressBarDisappear();
         driver.findElement(By.xpath(String.format("//a[@data-id='%s']", brand))).click();
-        Waits.waitTitleContains("Ноутбуки " + brand);
+        Waits.waitForProgressBarDisappear();
         return this;
     }
 }
