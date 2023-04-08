@@ -19,11 +19,11 @@ public class LogInPage extends BasePage {
     @FindBy(xpath = "//button[contains(@class,'auth-modal__submit')]")
     private Button submitButton;
 
-    @FindBy(xpath = "//div[contains(@class,'auth-modal')]//fieldset//p")
-    private Title errorMessageInvalidPassword;
-
     @FindBy(xpath = "//p[contains(@class,'error-message')]")
     private Title errorMessageInvalidEmail;
+
+    @FindBy(xpath = "//rz-re-captcha//p")
+    private Title errorMessageWithCaptcha;
 
     public String getLogInHeader() {
         return logInHeader.getTitle();
@@ -54,11 +54,11 @@ public class LogInPage extends BasePage {
         return this;
     }
 
-    public String getErrorMessageInvalidPassword() {
-        return errorMessageInvalidPassword.getTitle();
-    }
-
     public String getErrorMessageInvalidEmail() {
         return errorMessageInvalidEmail.getTitle();
+    }
+
+    public String getErrorMessageWithCaptcha() {
+        return errorMessageWithCaptcha.getTitle();
     }
 }

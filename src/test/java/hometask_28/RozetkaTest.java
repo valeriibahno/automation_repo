@@ -74,7 +74,7 @@ public class RozetkaTest extends BaseTest {
     }
 
     @Test
-    public void verifyLoginWithCorrectEmailAndWrongPassword() {
+    public void verifyErrorWithCaptchaForLogin() {
 
         String emailFaker = new Faker().internet().emailAddress();
         String passwordFaker = new Faker().internet().password();
@@ -83,7 +83,7 @@ public class RozetkaTest extends BaseTest {
                 .clickUserIcon();
         logInBO
                 .fillEmailAndPassword(emailFaker, passwordFaker)
-                .verifyErrorMessageInvalidPassword();
+                .verifyErrorMessageWithCaptcha();
     }
 
     @Test

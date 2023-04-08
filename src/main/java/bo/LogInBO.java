@@ -24,9 +24,9 @@ public class LogInBO extends BaseBO {
         return this;
     }
 
-    public LogInBO verifyErrorMessageInvalidPassword() {
-        LOGGER.info("Verify error message for invalid password");
-        Assert.assertEquals(logInPage.getErrorMessageInvalidPassword(), Constants.ERROR_INVALID_PASSWORD, "Wrong message for invalid password is displayed");
+    public LogInBO verifyErrorMessageWithCaptcha() {
+        LOGGER.info("Verify error message for with captcha");
+        Assert.assertEquals(logInPage.getErrorMessageWithCaptcha(), Constants.ERROR_CAPTCHA, "Wrong message for invalid password is displayed");
         return this;
     }
 }

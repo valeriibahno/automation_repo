@@ -9,5 +9,5 @@ public class Constants {
 
     // Errors
     public static final String ERROR_INVALID_EMAIL = "Введено невірну адресу ел. пошти або номер телефону";
-    public static final String ERROR_INVALID_PASSWORD = "Введено невірний пароль!";
+    public static final String ERROR_CAPTCHA = "Необхідно підтвердити, що ви не робот";
 }
