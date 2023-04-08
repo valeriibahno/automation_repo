@@ -29,6 +29,7 @@ public class CatalogGridPage extends HeaderPage {
 
     public String getCatalogGridHeader() {
         Waits.waitForProgressBarDisappear();
+        Waits.waitForVisibleWebElement(catalogHeader);
         return catalogHeader.getTitle();
     }
 
