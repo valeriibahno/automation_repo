@@ -80,4 +80,10 @@ public class HeaderPage extends BasePage {
         categoryVacancies.click();
         return this;
     }
+
+    public HeaderPage clearSearchField() {
+        LOGGER.info("Clear search field");
+        searchField.clear();
+        return this;
+    }
 }

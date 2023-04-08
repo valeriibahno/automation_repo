@@ -27,4 +27,9 @@ public class HeaderBO extends BaseBO {
         headerPage.clickCategoryVacancies();
         return this;
     }
+    
+    public HeaderBO clearSearchField() {
+        headerPage.clearSearchField();
+        return this;
+    }
 }

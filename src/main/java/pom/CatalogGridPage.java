@@ -28,6 +28,7 @@ public class CatalogGridPage extends HeaderPage {
     private List<WebElement> listSelectedBrands;
 
     public String getCatalogGridHeader() {
+        Waits.waitForProgressBarDisappear();
         return catalogHeader.getTitle();
     }
 
