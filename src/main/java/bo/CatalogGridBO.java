@@ -3,6 +3,7 @@ package bo;
 import org.testng.Assert;
 import pom.CatalogGridPage;
 import services.Constants;
+import services.Waits;
 
 public class CatalogGridBO extends BaseBO {
 
@@ -22,6 +23,7 @@ public class CatalogGridBO extends BaseBO {
 
     public CatalogGridBO verifyHeaderCatalogGrid() {
         LOGGER.info("Verify header of catalog after search");
+        Waits.waitTitleContains(Constants.CATEGORY_LAPTOPS);
         Assert.assertEquals(catalogGridPage.getCatalogGridHeader(), Constants.CATEGORY_LAPTOPS, "Wrong category is displayed");
         return this;
     }

@@ -9,7 +9,7 @@ import java.util.List;
 
 public class RozetkaTest extends BaseTest {
 
-    @Test
+    @Test(priority = 1)
     public void verifyPossibilityAddExpensiveLaptopHPInCart() {
 
         String nameOfProduct = "Ноутбук HP ZBook Fury 16 G9 16\" 4K WQUXGA Ts,500n/i9-12950HX (5.0)/128Gb/SSD4Tb/RTX A5500,16GB/WWAN 5G/W11P";
@@ -32,7 +32,7 @@ public class RozetkaTest extends BaseTest {
                 .verifyPriceOfProductLessThanMaxPrice(Constants.MAX_PRICE_LAPTOP);
     }
 
-    @Test
+    @Test(priority = 2)
     public void verifySearchingSeveralBrandsLaptop() {
 
         List<String> listBrands = Arrays.asList("HP", "Acer", "Apple");
@@ -46,7 +46,7 @@ public class RozetkaTest extends BaseTest {
                 .verifyQuantitySelectedBrands(listBrands.size());
     }
 
-    @Test
+    @Test(priority = 3)
     public void verifyTitleBrandInSearchingResult() {
 
         List<String> listBrands = Arrays.asList("Nokia", "Poco", "Realme");
@@ -60,7 +60,7 @@ public class RozetkaTest extends BaseTest {
         }
     }
 
-    @Test
+    @Test(priority = 4)
     public void verifyLoginWithWrongEmail() {
 
         String email = "_te#st123";
@@ -73,7 +73,7 @@ public class RozetkaTest extends BaseTest {
                 .verifyErrorMessageInvalidEmail();
     }
 
-    @Test
+    @Test(priority = 5)
     public void verifyErrorWithCaptchaForLogin() {
 
         String emailFaker = new Faker().internet().emailAddress();
@@ -86,7 +86,7 @@ public class RozetkaTest extends BaseTest {
                 .verifyErrorMessageWithCaptcha();
     }
 
-    @Test
+    @Test(priority = 6)
     public void verifyOpenDeliveryPoints() {
 
         List<String> listCities = Arrays.asList("Дніпро", "Житомир", "Львів");
@@ -97,7 +97,7 @@ public class RozetkaTest extends BaseTest {
                 .selectDeliveryPointsByCityAndVerifyTitles(listCities);
     }
 
-    @Test
+    @Test(priority = 7)
     public void verifySearchingVacancies() {
 
         headerBO
