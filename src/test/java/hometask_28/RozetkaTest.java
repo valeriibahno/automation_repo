@@ -1,15 +1,24 @@
 package hometask_28;
 
 import com.github.javafaker.Faker;
+import io.qameta.allure.*;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import services.AllureListener;
 import services.Constants;
 
 import java.util.Arrays;
 import java.util.List;
 
+@Epic("Smoke testing of site Rozetka")
+@Listeners(AllureListener.class)
+@Owner("Valerii Bahno")
 public class RozetkaTest extends BaseTest {
 
     @Test(priority = 1)
+    @Story("Searching on site Rozetka")
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("Smoke test")
     public void verifyPossibilityAddExpensiveLaptopHPInCart() {
 
         String nameOfProduct = "Ноутбук HP ZBook Fury 16 G9 16\" 4K WQUXGA Ts,500n/i9-12950HX (5.0)/128Gb/SSD4Tb/RTX A5500,16GB/WWAN 5G/W11P";
@@ -25,7 +34,7 @@ public class RozetkaTest extends BaseTest {
                 .clickSortedByExpensive()
                 .selectIconCartItemByPosition(positionItemInGrid);
         headerBO
-                .clickIconCartWithSelectedProducts();
+                .clickIconCartWithSelectedProduct();
         cartBO
                 .verifyHeader()
                 .verifyTitleOfProductInCart(nameOfProduct)
@@ -33,6 +42,7 @@ public class RozetkaTest extends BaseTest {
     }
 
     @Test(priority = 2)
+    @Story("Searching on site Rozetka")
     public void verifySearchingSeveralBrandsLaptop() {
 
         List<String> listBrands = Arrays.asList("HP", "Acer", "Apple");
@@ -47,6 +57,7 @@ public class RozetkaTest extends BaseTest {
     }
 
     @Test(priority = 3)
+    @Story("Searching on site Rozetka")
     public void verifyTitleBrandInSearchingResult() {
 
         List<String> listBrands = Arrays.asList("Nokia", "Poco", "Realme");
@@ -61,6 +72,7 @@ public class RozetkaTest extends BaseTest {
     }
 
     @Test(priority = 4)
+    @Story("Login to site Rozetka")
     public void verifyLoginWithWrongEmail() {
 
         String email = "_te#st123";
@@ -74,6 +86,7 @@ public class RozetkaTest extends BaseTest {
     }
 
     @Test(priority = 5)
+    @Story("Login to site Rozetka")
     public void verifyErrorWithCaptchaForLogin() {
 
         String emailFaker = new Faker().internet().emailAddress();
@@ -87,9 +100,10 @@ public class RozetkaTest extends BaseTest {
     }
 
     @Test(priority = 6)
+    @Story("Displaying delivery points")
     public void verifyOpenDeliveryPoints() {
 
-        List<String> listCities = Arrays.asList("Дніпро", "Житомир", "Львів");
+        List<String> listCities = Arrays.asList("Дніпро", "Житомир", "Львів for failure");
 
         mainBO
                 .clickDeliveryPoints();
@@ -98,6 +112,7 @@ public class RozetkaTest extends BaseTest {
     }
 
     @Test(priority = 7)
+    @Story("Searching vacancies")
     public void verifySearchingVacancies() {
 
         headerBO

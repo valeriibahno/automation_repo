@@ -1,6 +1,7 @@
 package hometask_28;
 
 import bo.*;
+import io.qameta.allure.Step;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.OutputType;
@@ -33,6 +34,7 @@ public class BaseTest {
     private final static Logger LOGGER = Logger.getLogger(BaseTest.class);
 
     @BeforeMethod
+    @Step("Set up driver and pages, open browser")
     public void setUp() {
         driver = DriverManager.getDriver();
         headerPage = new HeaderPage();
@@ -63,6 +65,7 @@ public class BaseTest {
     }
 
     @AfterClass
+    @Step("Close browser")
     public void closeBrowser() {
         DriverManager.quit();
     }
