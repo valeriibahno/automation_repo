@@ -72,7 +72,7 @@ public class RozetkaSteps {
                 .clickSortedByExpensive()
                 .selectIconCartItemByPosition(positionItemInGrid);
         headerBO
-                .clickIconCartWithSelectedProducts();
+                .clickIconCartWithSelectedProduct();
     }
 
     @Then("Verify information about product in Cart")
@@ -138,7 +138,7 @@ public class RozetkaSteps {
     public void iSeeErrorMessageWithInvalidPassword() {
 
         logInBO
-                .verifyErrorMessageInvalidPassword();
+                .verifyErrorMessageWithCaptcha();
     }
 
     @When("Open delivery points")
