@@ -1,7 +1,7 @@
 package hometask_25;
 
-import services.Constants;
 import org.testng.annotations.Test;
+import services.Constants;
 
 public class RozetkaTest extends BaseTest {
 
@@ -21,7 +21,7 @@ public class RozetkaTest extends BaseTest {
                 .clickSortedByExpensive()
                 .selectIconCartItemByPosition(positionItemInGrid);
         headerBO
-                .clickIconCartWithSelectedProducts();
+                .clickIconCartWithSelectedProduct();
         cartBO
                 .verifyHeader()
                 .verifyTitleOfProductInCart(nameOfProduct)

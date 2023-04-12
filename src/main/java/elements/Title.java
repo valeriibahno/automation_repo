@@ -9,7 +9,7 @@ public class Title extends AbstractElement {
     }
 
     public String getTitle() {
-        if(webElement.isDisplayed()) {
+        if(webElement.isDisplayed() && webElement.isEnabled()) {
             return webElement.getText();
         }
         return null;

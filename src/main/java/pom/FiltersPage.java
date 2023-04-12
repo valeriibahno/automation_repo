@@ -13,9 +13,8 @@ public class FiltersPage extends HeaderPage {
     public FiltersPage selectSpecificBrand(String brand) {
         LOGGER.info("Select brand '" + brand + "' in the filter");
         Waits.waitForProgressBarDisappear();
-        Waits.waitForWebElementToBeClickable(filterBrands);
         driver.findElement(By.xpath(String.format("//a[@data-id='%s']", brand))).click();
-        Waits.waitForWebElementToBeClickable(filterBrands);
+        Waits.waitForProgressBarDisappear();
         return this;
     }
 }

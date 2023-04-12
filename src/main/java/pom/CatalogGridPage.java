@@ -3,6 +3,8 @@ package pom;
 import elements.Title;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import services.Constants;
+import services.DriverManager;
 import services.Waits;
 
 import java.util.List;
@@ -27,8 +29,17 @@ public class CatalogGridPage extends HeaderPage {
     @FindBy(xpath = "//a[@class='catalog-selection__link']")
     private List<WebElement> listSelectedBrands;
 
+    @FindBy(xpath = "//rz-filter-searchline")
+    private WebElement searchFieldByBrand;
+
     public String getCatalogGridHeader() {
-        return catalogHeader.getTitle();
+        String title = null;
+        if(DriverManager.getDriver().getPageSource().contains(Constants.CATEGORY_LAPTOPS)) {
+            Waits.waitForProgressBarDisappear();
+            Waits.waitForWebElementToBeClickable(searchFieldByBrand);
+            title = catalogHeader.getTitle();
+        }
+        return title;
     }
 
     public int getQuantitySelectedBrands() {

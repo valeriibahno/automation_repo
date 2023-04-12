@@ -8,17 +8,17 @@ import services.Waits;
 
 public class DeliveryPointsPage extends BasePage {
 
-    @FindBy(xpath = "//div[@id='mapSidebar']")
-    private WebElement listDeliveryPoints;
+    @FindBy(xpath = "//rz-retail")
+    private WebElement mapWithDeliveryPoints;
 
     @FindBy(xpath = "//section[@id='pickup']/h1")
     private Title titleDeliveryPoints;
 
-    public DeliveryPointsPage selectDeliveryPointsBYCity(String city) {
+    public DeliveryPointsPage selectDeliveryPointsByCity(String city) {
 
         LOGGER.info("Select delivery point " + city);
         driver.findElement(By.xpath(String.format("//rz-tag-list//a[contains((.),'%s')]", city))).click();
-        Waits.waitForWebElementToBeClickable(listDeliveryPoints);
+        Waits.waitForVisibleWebElement(mapWithDeliveryPoints);
         return this;
     }
 
