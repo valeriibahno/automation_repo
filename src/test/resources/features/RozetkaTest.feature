@@ -48,3 +48,7 @@ Feature: Testing web-site Rozetka
     Scenario: Search vacancies
       When I open page with vacancies
       Then I see list of vacancies
+
+    Scenario: Select the most expensive laptop HP to cart
+      When I add found the most expensive laptop HP to the cart
+      Then I see information about it in the cart

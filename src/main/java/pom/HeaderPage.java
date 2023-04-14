@@ -28,7 +28,7 @@ public class HeaderPage extends BasePage {
     @FindBy(xpath = "//rz-mobile-user-menu")
     private Button buttonUserMenu;
 
-    @FindBy(xpath = "//a[@class='ng-tns-c63-2' and contains((.),'Вакансії')]")
+    @FindBy(xpath = "//nav//a[contains((.),'Вакансії')]")
     private WebElement categoryVacancies;
 
     public boolean isDisplayedLogo() {

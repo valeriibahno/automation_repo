@@ -4,7 +4,6 @@ import bo.*;
 import com.github.javafaker.Faker;
 import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -63,21 +62,10 @@ public class RozetkaSteps {
                 .selectSeveralBrand(listBrand);
     }
 
-    @And("Sorted by price and select first of found products")
-    public void sorted_by_price() {
-
-        int positionItemInGrid = 1;
-
-        catalogGridBO
-                .clickSortedByExpensive()
-                .selectIconCartItemByPosition(positionItemInGrid);
-        headerBO
-                .clickIconCartWithSelectedProduct();
-    }
-
-    @Then("Verify information about product in Cart")
+    @Then("I see information about it in the cart")
     public void verifyInformationAboutProductInCart() {
-        String nameOfProduct = "Ноутбук HP ZBook Fury 16 G9 16\" 4K WQUXGA Ts,500n/i9-12950HX (5.0)/128Gb/SSD4Tb/RTX A5500,16GB/WWAN 5G/W11P";
+
+        String nameOfProduct = "Ноутбук HP ZBook Studio G9 16\" 4K WQUXGA IPS, 500n/i9-12900H (5.0)/64Gb/SSD4Tb/RTX 5500,16GB/FPS/Підсв/Linux";
 
         cartBO
                 .verifyHeader()
@@ -171,5 +159,23 @@ public class RozetkaSteps {
                 .verifyTitleCarrierPage()
                 .clickButtonShowVacancies()
                 .verifyListVacancyExists();
+    }
+
+    @When("I add found the most expensive laptop HP to the cart")
+    public void iAddFoundTheMostExpensiveLaptopHPToTheCart() {
+
+        String brandHP = "HP";
+        int positionItemInGrid = 1;
+
+        catalogGridBO
+                .searchItem(Constants.CATEGORY_LAPTOPS)
+                .verifyHeaderCatalogGrid();
+        filterBO
+                .selectBrand(brandHP);
+        catalogGridBO
+                .clickSortedByExpensive()
+                .selectIconCartItemByPosition(positionItemInGrid);
+        headerBO
+                .clickIconCartWithSelectedProduct();
     }
 }
