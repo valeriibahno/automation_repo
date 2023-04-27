@@ -4,7 +4,7 @@
 <suite name="SuiteCucumber" data-provider-thread-count="2">
     <test name="test">
         <classes>
-            <class name="hometask_27.TestRunner"/>
+            <class name="hometask_27_BDD.TestRunner"/>
         </classes>
     </test>
 </suite>

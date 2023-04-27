@@ -1,4 +1,4 @@
-package hometask_27;
+package hometask_27_BDD;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;

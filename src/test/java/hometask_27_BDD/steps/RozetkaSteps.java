@@ -1,4 +1,4 @@
-package hometask_27.steps;
+package hometask_27_BDD.steps;
 
 import bo.*;
 import com.github.javafaker.Faker;
