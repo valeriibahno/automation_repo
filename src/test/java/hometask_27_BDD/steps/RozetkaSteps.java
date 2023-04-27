@@ -65,7 +65,7 @@ public class RozetkaSteps {
     @Then("I see information about it in the cart")
     public void verifyInformationAboutProductInCart() {
 
-        String nameOfProduct = "Ноутбук HP ZBook Studio G9 16\" 4K WQUXGA IPS, 500n/i9-12900H (5.0)/64Gb/SSD4Tb/RTX 5500,16GB/FPS/Підсв/Linux";
+        String nameOfProduct = "Ноутбук HP ZBook Fury 16 G9 16\" 4K WQUXGA Ts,500n/i9-12950HX (5.0)/128Gb/SSD4Tb/RTX A5500,16GB/WWAN 5G/W11P";
 
         cartBO
                 .verifyHeader()
